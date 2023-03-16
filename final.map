@@ -1,0 +1,171 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008000000 0x0000000000100000 xr
+SRAM             0x0000000020000000 0x0000000000020000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccPTdGnb.o
+LOAD main.o
+
+.text           0x0000000008000000      0x29c
+ *(.interrupt_vector_table)
+ .interrupt_vector_table
+                0x0000000008000000      0x184 /tmp/ccPTdGnb.o
+                0x0000000008000000                isr_table
+ *(.text)
+ .text          0x0000000008000184      0x108 /tmp/ccPTdGnb.o
+                0x0000000008000184                SVCall_Handler
+                0x0000000008000184                EXTI3_IRQ_Handler
+                0x0000000008000184                CAN1_TX_IRQ_Handler
+                0x0000000008000184                ADC3_IRQ_Handler
+                0x0000000008000184                USART2_IRQ_Handler
+                0x0000000008000184                HardFault_Handler
+                0x0000000008000184                UART5_IRQ_Handler
+                0x0000000008000184                QUADSPI_IRQ_Handler
+                0x0000000008000184                SysTick_Handler
+                0x0000000008000184                I2C1_EV_IRQ_Handler
+                0x0000000008000184                TIM1_BRK_IRQ_Handler
+                0x0000000008000184                PendSV_Handler
+                0x0000000008000184                NMI_Handler
+                0x0000000008000184                SDMMC1_IRQ_Handler
+                0x0000000008000184                TIM3_IRQ_Handler
+                0x0000000008000184                LPTIM2_IRQ_Handler
+                0x0000000008000184                RNG_HASH_IRQ_Handler
+                0x0000000008000184                USART3_IRQ_Handler
+                0x0000000008000184                LCD_IRQ_Handler
+                0x0000000008000184                SPI1_IRQ_Handler
+                0x0000000008000184                DMA1_CH6_IRQ_Handler
+                0x0000000008000184                TIM2_IRQ_Handler
+                0x0000000008000184                DMA1_CH4_IRQ_Handler
+                0x0000000008000184                LPUART1_IRQ_Handler
+                0x0000000008000184                PVD_PVM_IRQ_Handler
+                0x0000000008000184                TSC_IRQ_Handler
+                0x0000000008000184                TIM1_TRG_COM_IRQ_Handler
+                0x0000000008000184                COMP_IRQ_Handler
+                0x0000000008000184                DMA2_CH7_IRQ_Handler
+                0x0000000008000184                EXTI1_IRQ_Handler
+                0x0000000008000184                RTC_WKUP_IRQ_Handler
+                0x0000000008000184                TIM5_IRQ_Handler
+                0x0000000008000184                UsageFault_Handler
+                0x0000000008000184                SAI2_IRQ_Handler
+                0x0000000008000184                I2C1_ER_IRQ_Handler
+                0x0000000008000184                EXTI9_5_IRQ_Handler
+                0x0000000008000184                DMA1_CH2_IRQ_Handler
+                0x0000000008000184                UART4_IRQ_Handler
+                0x0000000008000184                EXTI4_IRQ_Handler
+                0x0000000008000184                LPTIM1_IRQ_Handler
+                0x0000000008000184                CAN1_SCE_IRQ_Handler
+                0x0000000008000184                SAI1_IRQ_Handler
+                0x0000000008000184                I2C2_ER_IRQ_Handler
+                0x0000000008000184                TIM8_UP_IRQ_Handler
+                0x0000000008000184                I2C3_ER_IRQ_Handler
+                0x0000000008000184                I2C2_EV_IRQ_Handler
+                0x0000000008000184                EXTI0_IRQ_Handler
+                0x0000000008000184                AES_IRQ_Handler
+                0x0000000008000184                Flash_IRQ_Handler
+                0x0000000008000184                DMA1_CH7_IRQ_Handler
+                0x0000000008000184                DFSDM1_FLT3_IRQ_Handler
+                0x0000000008000184                OTG_FS_IRQ_Handler
+                0x0000000008000184                ADC1_2_IRQ_Handler
+                0x0000000008000184                SPI3_IRQ_Handler
+                0x0000000008000184                Default_Handler
+                0x0000000008000184                CAN1_RX0_IRQ_Handler
+                0x0000000008000184                TIM6_DACUNDER_IRQ_Handler
+                0x0000000008000184                DFSDM1_FLT0_IRQ_Handler
+                0x0000000008000184                TIM4_IRQ_Handler
+                0x0000000008000184                DMA2_CH5_IRQ_Handler
+                0x0000000008000184                DMA1_CH5_IRQ_Handler
+                0x0000000008000184                Debug_Handler
+                0x0000000008000184                MemManage_Handler
+                0x0000000008000184                I2C3_EV_IRQ_Handler
+                0x0000000008000184                RCC_IRQ_Handler
+                0x0000000008000184                RTC_ALARM_IRQ_Handler
+                0x0000000008000184                USART1_IRQ_Handler
+                0x0000000008000184                SWPMI1_IRQ_Handler
+                0x0000000008000184                DFSDM1_FLT2_IRQ_Handler
+                0x0000000008000184                FMC_IRQ_Handler
+                0x0000000008000184                DMA2_CH2_IRQ_Handler
+                0x0000000008000184                DMA2_CH3_IRQ_Handler
+                0x0000000008000184                TIM1_UP_IRQ_Handler
+                0x0000000008000184                WWDG_IRQ_Handler
+                0x0000000008000184                TIM1_CC_IRQ_Handler
+                0x0000000008000184                DMA2_CH1_IRQ_Handler
+                0x0000000008000184                DMA1_CH3_IRQ_Handler
+                0x0000000008000184                DMA2_CH4_IRQ_Handler
+                0x0000000008000184                SPI2_IRQ_Handler
+                0x0000000008000184                EXTI15_10_IRQ_Handler
+                0x0000000008000184                TIM7_IRQ_Handler
+                0x0000000008000184                RTC_STAMP_IRQ_Handler
+                0x0000000008000184                FPU_IRQ_Handler
+                0x0000000008000184                EXTI2_IRQ_Handler
+                0x0000000008000184                BusFault_Handler
+                0x0000000008000184                DMA2_CH6_IRQ_Handler
+                0x0000000008000184                TIM8_CC_IRQ_Handler
+                0x0000000008000184                TIM8_BRK_IRQ_Handler
+                0x0000000008000184                DMA1_CH1_IRQ_Handler
+                0x0000000008000184                TIM8_TRG_COM_IRQ_Handler
+                0x0000000008000184                DFSDM1_FLT1_IRQ_Handler
+                0x0000000008000190                Reset_Handler
+ .text          0x000000000800028c       0x10 main.o
+                0x000000000800028c                main
+ *(.rodata)
+                0x000000000800029c                . = ALIGN (0x4)
+                0x000000000800029c                _end_text = .
+
+.glue_7         0x000000000800029c        0x0
+ .glue_7        0x000000000800029c        0x0 linker stubs
+
+.glue_7t        0x000000000800029c        0x0
+ .glue_7t       0x000000000800029c        0x0 linker stubs
+
+.vfp11_veneer   0x000000000800029c        0x0
+ .vfp11_veneer  0x000000000800029c        0x0 linker stubs
+
+.v4_bx          0x000000000800029c        0x0
+ .v4_bx         0x000000000800029c        0x0 linker stubs
+
+.iplt           0x000000000800029c        0x0
+ .iplt          0x000000000800029c        0x0 /tmp/ccPTdGnb.o
+
+.rel.dyn        0x000000000800029c        0x0
+ .rel.iplt      0x000000000800029c        0x0 /tmp/ccPTdGnb.o
+
+.data           0x0000000020000000        0x4 load address 0x000000000800029c
+                0x0000000020000000                _start_data = .
+ *(.data)
+ .data          0x0000000020000000        0x0 /tmp/ccPTdGnb.o
+ .data          0x0000000020000000        0x4 main.o
+                0x0000000020000000                x
+                0x0000000020000004                . = ALIGN (0x4)
+                0x0000000020000004                _end_data = .
+
+.igot.plt       0x0000000020000004        0x0 load address 0x00000000080002a0
+ .igot.plt      0x0000000020000004        0x0 /tmp/ccPTdGnb.o
+
+.bss            0x0000000020000004        0x4 load address 0x00000000080002a0
+                0x0000000020000004                _start_bss = .
+ *(.bss)
+ .bss           0x0000000020000004        0x0 /tmp/ccPTdGnb.o
+ .bss           0x0000000020000004        0x4 main.o
+                0x0000000020000004                a
+ *(COMMON)
+                0x0000000020000008                . = ALIGN (0x4)
+                0x0000000020000008                _end_bss = .
+OUTPUT(final.elf elf32-littlearm)
+LOAD linker stubs
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 /tmp/ccPTdGnb.o
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 main.o
+
+.ARM.attributes
+                0x0000000000000000       0x30
+ .ARM.attributes
+                0x0000000000000000       0x2a /tmp/ccPTdGnb.o
+ .ARM.attributes
+                0x000000000000002a       0x2e main.o

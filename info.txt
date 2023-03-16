@@ -1,0 +1,6 @@
+
+GDB:
+
+write image:
+1)  monitor flash write_image erase final.elf
+2)  monitor reset halt
