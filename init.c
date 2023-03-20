@@ -1,7 +1,7 @@
 #include <stdint.h>
 
 #define SRAM_BEGIN 0x20000000U
-#define SRAM_SIZE (128U * 1024U)
+#define SRAM_SIZE (96U * 1024U)
 #define SRAM_END ((SRAM_BEGIN) + (SRAM_SIZE))
 
 #define STACK_START SRAM_END
