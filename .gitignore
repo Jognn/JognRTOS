@@ -1,4 +1,2 @@
 .idea
-*.elf
-*.map
-*.o
+build/

@@ -1,23 +1,36 @@
 CC=arm-none-eabi-gcc
 CPU=cortex-m4
 CFLAGS= -c -mcpu=$(CPU) -mthumb -std=gnu11 -Wall -o0
-LDFLAGS= -nostdlib -T stm32l476_ls.ld -Wl,-Map=final.map
+LDFLAGS= -nostdlib -T stm32l476_ls.ld -Wl,-Map=build/final.map
 OPENOCD_BOARD_CONFIG=stm32l476g-disco.cfg
 #stm32l4discovery.cfg
 
-all:main.o init.o  final.elf
+BUILD_PATH := build
+SRC_PATH := src
 
-main.o:main.c
-	$(CC) $(CFLAGS) -o $@ $^
+SRC := $(foreach x, $(SRC_PATH), $(wildcard $(addprefix $(x)/*,.c*)))
+OBJ := $(addprefix $(BUILD_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
+TARGET := $(BUILD_PATH)/final.elf
 
-init.o:init.c
-	$(CC) $(CFLAGS) -o $@ $^
+default: makedir all
 
-final.elf:main.o init.o
+$(TARGET): $(OBJ)
 	$(CC) $(LDFLAGS) -o $@ $^
 
-clean:
-	rm -f *.o *.elf *.map
+$(BUILD_PATH)/%.o: $(SRC_PATH)/%.c*
+	$(CC) $(CFLAGS) -o $@ $<
 
+.PHONY: makedir
+makedir:
+	mkdir $(BUILD_PATH)
+
+.PHONY: all
+all: $(TARGET)
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILD_PATH)
+
+.PHONY: load
 load:
 	openocd -f board/$(OPENOCD_BOARD_CONFIG)
