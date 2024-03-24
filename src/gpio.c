@@ -5,7 +5,7 @@
 #include "sleep.h"
 
 
-void gpio_init(const struct GpioPin pin, const enum GpioPinMode mode)
+void gpio_init(const struct GpioPin pin, const enum GpioMode mode)
 {
     if (pin.pinNumber > MAXIMAL_PIN_NUMBER)
     {

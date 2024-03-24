@@ -23,7 +23,7 @@ struct GpioPin
     uint16_t pinNumber;
 };
 
-enum GpioPinMode
+enum GpioMode
 {
     INPUT = 0,
     OUTPUT = 1,
@@ -32,7 +32,7 @@ enum GpioPinMode
 };
 
 
-void gpio_init(struct GpioPin pin, enum GpioPinMode mode);
+void gpio_init(struct GpioPin pin, enum GpioMode mode);
 
 void gpio_on(struct GpioPin pin);
 
