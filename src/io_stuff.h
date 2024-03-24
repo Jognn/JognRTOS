@@ -1,0 +1,34 @@
+//
+// Created by jogn on 21.08.23.
+//
+
+#ifndef JOGNRTOS_IO_STUFF_H
+#define JOGNRTOS_IO_STUFF_H
+
+#include <stdint.h>
+
+/**
+ * GPIO PORT A REGISTERS
+ */
+
+#define GPIO_A_BASE_ADDR 0x48000000
+#define GPIO_A_MODER_ADDR (GPIO_A_BASE_ADDR + 0x00)
+#define GPIO_A_OTYPER_ADDR (GPIO_A_BASE_ADDR + 0x04)
+#define GPIO_A_SPEED_ADDR (GPIO_A_BASE_ADDR + 0x08)
+#define GPIO_A_OUTPUT_DATA_ADDR (GPIO_A_BASE_ADDR + 0x14)
+#define GPIO_A_BSRR_ADDR (GPIO_A_BASE_ADDR + 0x18)
+
+
+/**
+ * RCC REGISTERS
+ */
+#define RCC_BASE_ADDR (0x40021000)
+#define RCC_AHB2_ENR_ADDR (RCC_BASE_ADDR + 0x4C)
+
+/**
+ * Maybe change to an inline function?
+ */
+#define SET_MODE_REGISTER(PIN_NUMBER, VALUE) ( (VALUE) << ((PIN_NUMBER)*2) )
+#define SET_TYPE_REGISTER(PIN_NUMBER, VALUE) ( (VALUE) << (PIN_NUMBER) )
+
+#endif //JOGNRTOS_IO_STUFF_H

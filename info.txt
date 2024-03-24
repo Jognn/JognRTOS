@@ -1,8 +1,17 @@
-
-
 write image:
 1) monitor reset init
-2) monitor flash write_image erase final.elf
+2) monitor flash write_image erase build/final.elf
 3) monitor reset
 4) monitor halt
 5) monitor mdw 0x20000000 4
+
+
+AHB - advanced high-performance bus
+
+GPIOx_MODER (32 bit) -  I/O mode (input, output, AF, analog)
+GPIOx_OTYPER (32 bit) - output type (push-pull open-drain)
+GPIOx_SPEEDR (32 bit) - speed?
+GPIOx_PUPDR (32 bit) - select pull-up/pull-down
+
+GPIOx_IDR (16 bit) - input data register
+GPIOx_ODR (16 bit) - output data register
