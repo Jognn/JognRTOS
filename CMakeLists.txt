@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(NaiveFTP)
+project(JognRTOS)
 
 include(toolchain.cmake)
 
