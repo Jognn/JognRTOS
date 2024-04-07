@@ -1,4 +1,4 @@
-write image:
+How to flash an image:
 1) monitor reset init
 2) monitor flash write_image erase build/final.elf
 3) monitor reset
