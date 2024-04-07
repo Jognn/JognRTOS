@@ -1,8 +1,12 @@
 #include "gpio.h"
 
 #include "gpio_internal.h"
-#include "sleep.h"
 
+
+static void primitive_sleep(unsigned iterations)
+{
+    for (unsigned i = 0; i < iterations; ++i);
+}
 
 void gpio_init(const struct GpioPin pin, const enum GpioMode mode)
 {
