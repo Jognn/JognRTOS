@@ -1,4 +1,3 @@
-
 #ifndef JOGNRTOS_GPIO_H
 #define JOGNRTOS_GPIO_H
 

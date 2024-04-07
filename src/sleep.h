@@ -1,4 +1,3 @@
-
 #ifndef JOGNRTOS_WAIT_H
 #define JOGNRTOS_WAIT_H
 

@@ -1,7 +1,3 @@
-//
-// Created by jogn on 24.03.24.
-//
-
 #ifndef JOGNRTOS_GPIO_INTERNAL_H
 #define JOGNRTOS_GPIO_INTERNAL_H
 

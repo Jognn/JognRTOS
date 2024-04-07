@@ -1,4 +1,3 @@
-
 #include "gpio.h"
 
 #include "gpio_internal.h"
@@ -12,7 +11,7 @@ void gpio_init(const struct GpioPin pin, const enum GpioMode mode)
         return;
     }
 
-    // TODO: Maybe whether it has been already enabled?
+    // TODO: Maybe check whether it has been already enabled?
     volatile uint32_t* const rccAhbRegister = (volatile uint32_t*) (RCC_AHB2_ENR_ADDR);
     *rccAhbRegister |= 1 << 0;
     primitive_sleep(5);
