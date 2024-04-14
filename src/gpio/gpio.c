@@ -31,21 +31,20 @@ void gpio_init(const struct GpioPin pin, const enum GpioMode mode)
 void gpio_on(struct GpioPin pin)
 {
     // TODO: We should probably check whether this pin is configured as OUTPUT
-    volatile uint16_t* const outputDataRegister = (volatile uint16_t*) GPIO_A_BSRR_ADDR;
+    volatile uint16_t* const outputDataRegister = (uint16_t*) GPIO_A_OUTPUT_DATA_ADDR;
     *outputDataRegister |= (1 << pin.pinNumber);
 }
 
 void gpio_off(struct GpioPin pin)
 {
     // TODO: We should probably check whether this pin is configured as OUTPUT
-    volatile uint16_t* const outputDataRegister = (volatile uint16_t*) GPIO_A_BSRR_ADDR;
+    volatile uint16_t* const outputDataRegister = (uint16_t*) GPIO_A_OUTPUT_DATA_ADDR;
     *outputDataRegister &= ~(1 << pin.pinNumber);
 }
 
 void gpio_toggle(struct GpioPin pin)
 {
-    // TODO: Not really sure if this actually works...
     // TODO: We should probably check whether this pin is configured as OUTPUT
-    volatile uint16_t* const outputDataRegister = (volatile uint16_t*) GPIO_A_BSRR_ADDR;
+    volatile uint16_t* const outputDataRegister = (uint16_t*) GPIO_A_OUTPUT_DATA_ADDR;
     *outputDataRegister ^= (1 << pin.pinNumber);
 }

@@ -1,5 +1,6 @@
 set(MAIN_SOURCES
     init.c
+    systick.c
     main.c
 )
 

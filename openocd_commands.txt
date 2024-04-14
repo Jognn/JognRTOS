@@ -1,6 +1,6 @@
 How to flash an image:
 1) monitor reset init
-2) monitor flash write_image erase build/final.elf
+2) monitor flash write_image erase cmake-build-default/src/final.elf
 3) monitor reset
 4) monitor halt
-5) monitor mdw 0x20000000 4
+5) monitor mdw 0x20000000

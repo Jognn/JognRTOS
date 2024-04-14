@@ -1,17 +1,24 @@
+#include "systick.h"
 #include "gpio/gpio.h"
 
 
-int sanity_flag;
-
 int main(void)
 {
-    const struct GpioPin gpioPin = {.gpioPort = PORT_A, .pinNumber = 4};
-    gpio_init(gpioPin, OUTPUT);
-    gpio_on(gpioPin);
+    systick_init(1000);
 
-    sanity_flag = 102;
+    const struct GpioPin gpioPinA4 = {.gpioPort = PORT_A, .pinNumber = 4};
+    gpio_init(gpioPinA4, OUTPUT);
+    gpio_on(gpioPinA4);
+
+    const struct GpioPin gpioPinA1 = {.gpioPort = PORT_A, .pinNumber = 1};
+    gpio_init(gpioPinA1, OUTPUT);
+    gpio_on(gpioPinA1);
+
     while (1)
     {
+        systick_sleep(1000);
+        gpio_toggle(gpioPinA4);
+        gpio_toggle(gpioPinA1);
     }
     return 0;
 }

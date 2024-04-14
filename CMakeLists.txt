@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
 project(JognRTOS)
+set(C_STANDARD C11)
+set(CMAKE_C_STANDARD_REQUIRED TRUE)
+
 
 include(toolchain.cmake)
 
