@@ -1,7 +1,8 @@
 set(MAIN_SOURCES
-    init.c
+    vector_table.c
     systick.c
     main.c
+    thread.c
 )
 
 add_subdirectory(gpio)

@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "assert.h"
+
 
 enum GpioPort
 {
@@ -21,6 +23,7 @@ struct GpioPin
     enum GpioPort gpioPort;
     uint16_t pinNumber;
 };
+STATIC_ASSERT(sizeof(struct GpioPin) == 4, gpio_pin_size);
 
 enum GpioMode
 {
