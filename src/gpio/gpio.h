@@ -23,7 +23,7 @@ struct GpioPin
     enum GpioPort gpioPort;
     uint16_t pinNumber;
 };
-STATIC_ASSERT(sizeof(struct GpioPin) == 4, gpio_pin_size);
+_Static_assert(sizeof(struct GpioPin) == 4, "GpioPin should be word size");
 
 enum GpioMode
 {
